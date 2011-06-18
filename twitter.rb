@@ -22,4 +22,4 @@ tweets = Twitter.search(:version => 1, :params => {:q => "pluto"})
 trends = Twitter.trends(:version => 1, :time_frame => :current)
 
 # Submit a tweet. Authentication skipped in example.
-Twitter.tweet(:version => 1, :params => {:status => "I #love #planets! :)"})
+# Twitter.tweet(:version => 1, :params => {:status => "I #love #planets! :)"})
