@@ -26,3 +26,9 @@ gist_info     = Gist.info(:gist_id => gist_id, :format => :json)
 # Get the gists content
 gist_filename = gist_info["files"].first
 gist_content  = Gist.content(:gist_id => gist_id, :filename => gist_filename)
+
+# Hydra example
+hydra = Typhoeus::Hydra.new
+hydra.queue gists_request = Gist.index(:login => "xijo", :format => :json, :return_request => true)
+hydra.run
+puts gists_request.handled_response.inspect
